@@ -2,11 +2,44 @@
     ViewData["Title"] = "Home Page";
 }
 
-@*simple home page*@
-<div class="text-center">
-    <h1>Welcome to <br /> The Joel Hilton Film Collection</h1>
-</div>
+@*home page*@
 
-<div class="text-center">
-    <img src="~/img/joel.jpg" style="width: 300px; border-radius: 75%" alt="Joel" />
-</div>
+
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+        <div class="row justify-content-center">
+            <div class="col-xl-7 col-lg-9 text-center">
+                <img src="~/img/joel.jpg" style="width: 150px; border-radius: 75%" alt="Joel" />
+                <h1>Welcome to <br /> The Joel Hilton Film Collection</h1>
+            </div>
+        </div>
+
+        <div class="row icon-boxes">
+            <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
+                <div class="icon-box">
+                    <div class="icon"><i class="ri-palette-line"></i></div>
+                    <h4 class="title"><a asp-area="" asp-controller="Home" asp-action="Podcast">My Podcast</a></h4>
+                    <p class="description">Check out my podcast, Baconsale, where we discuss movies, music, television shows, and other pop culture topics</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="300">
+                <div class="icon-box">
+                    <div class="icon"><i class="ri-command-line"></i></div>
+                    <h4 class="title"><a asp-area="" asp-controller="Movies" asp-action="Create">Add Movies</a></h4>
+                    <p class="description">Add your own movies to the public database</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="400">
+                <div class="icon-box">
+                    <div class="icon"><i class="ri-stack-line"></i></div>
+                    <h4 class="title"><a asp-area="" asp-controller="Movies" asp-action="Index">View Movies</a></h4>
+                    <p class="description">View all the movies that have been added to the public database, as well as the movies in my personal collection</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section><!-- End Hero -->

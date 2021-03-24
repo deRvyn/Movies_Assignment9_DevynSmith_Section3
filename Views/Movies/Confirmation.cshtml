@@ -6,26 +6,32 @@
 
 
 @*confirmation page, with an if else to display different things depending on what comes up*@
-<div>
-    @if (@Model.Title == "Independence Day")
-    {
-        <img src="https://static.thenounproject.com/png/158221-200.png" />
-        <br />
-        <h1>Sorry, @Html.DisplayFor(model => model.Title) will never be added to the collection! (Take that Joel!) </h1>
-    }
-    else
-    {
-        <img src="https://static.thenounproject.com/png/2880554-200.png" />
-        <br />
-        <h1>Your movie, @Html.DisplayFor(model => model.Title) submitted successfully!</h1>
-        <br />
-        <h3>Happy watching!</h3>
-    }
+<main id="main">
+    <section id="about" class="about">
+        <div class="container" data-aos="fade-up">
+            <div>
+                @if (@Model.Title == "Independence Day")
+                {
+                    <img src="https://static.thenounproject.com/png/158221-200.png" />
+                    <br />
+                    <h1>Sorry, @Html.DisplayFor(model => model.Title) will never be added to the collection! (Take that Joel!) </h1>
+                }
+                else
+                {
+                    <img src="https://static.thenounproject.com/png/2880554-200.png" />
+                    <br />
+                    <h1>Your movie, @Html.DisplayFor(model => model.Title) submitted successfully!</h1>
+                    <br />
+                    <h3>Happy watching!</h3>
+                }
 
-</div>
+            </div>
 
-<br />
+            <br />
 
-<div>
-    <a asp-action="ViewMovies">Click here</a> to see the list of movies you've added
-</div>
+            <div>
+                <a asp-controller="Movies" asp-action="Index">Click here</a> to see the list of movies you've added
+            </div>
+        </div>
+    </section>
+</main>

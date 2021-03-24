@@ -5,74 +5,88 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>@ViewData["Title"]</h1>
+<main id="main">
+    <section id="about" class="about">
+        <div class="container" data-aos="fade-up">
+            <h1>@ViewData["Title"]</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Category)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Year)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Director)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Rating)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Edited)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LentTo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Notes)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Category)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Year)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Director)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Rating)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Edited)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LentTo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Notes)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.MovieID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.MovieID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.MovieID">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+            <p>
+                <a asp-action="Create">Create New</a>
+            </p>
+            <table class="table table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Category)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Title)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Year)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Director)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Rating)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Edited)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.LentTo)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Notes)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Category)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Title)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Year)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Director)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Rating)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Edited)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LentTo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Notes)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.MovieID">Edit</a> |
+                                <a asp-action="Details" asp-route-id="@item.MovieID">Details</a> |
+                                <a asp-action="Delete" asp-route-id="@item.MovieID">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="container" data-aos="fade-up">
+            <br />
+            <h3>My Personal Collection:</h3>
+            <br />
+            <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyE0sbJozaGmn1d-2p283sw7kSrLDkiWbwctKVHNak8CRgtt4kg8Vylbi1mo6A-e7qp2askfC8CNkf/pubhtml?gid=1400278809&amp;single=true&amp;widget=true&amp;headers=false" style="width:100%; height:700px;"></iframe>
+        </div>
+    </section>
+</main>
+

@@ -23,6 +23,12 @@ namespace Movies_Assignment9_DevynSmith_Section3.Controllers
             return View();
         }
 
+        //podcast view
+        public IActionResult Podcast()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
