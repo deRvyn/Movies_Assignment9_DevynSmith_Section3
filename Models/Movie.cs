@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Movies_Assignment9_DevynSmith_Section3.Models
 {
+    //movie class to set up the data and forms
     public class Movie
     {
         [Required]

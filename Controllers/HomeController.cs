@@ -18,6 +18,7 @@ namespace Movies_Assignment9_DevynSmith_Section3.Controllers
             _logger = logger;
         }
 
+        //homepage view
         public IActionResult Index()
         {
             return View();
@@ -29,6 +30,7 @@ namespace Movies_Assignment9_DevynSmith_Section3.Controllers
             return View();
         }
 
+        //privacy view
         public IActionResult Privacy()
         {
             return View();
