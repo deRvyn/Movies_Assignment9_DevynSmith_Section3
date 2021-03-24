@@ -55,11 +55,15 @@ namespace Movies_Assignment9_DevynSmith_Section3.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("MovieID,Category,Title,Year,Director,Rating,Edited,LentTo,Notes")] Movie movie)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && movie.Title == "Independence Day")
+            {
+                return View("Confirmation", movie);
+            }
+            if (ModelState.IsValid && movie.Title != "Independence Day")
             {
                 _context.Add(movie);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return View("Confirmation", movie);
             }
             return View(movie);
         }
@@ -91,7 +95,10 @@ namespace Movies_Assignment9_DevynSmith_Section3.Controllers
             {
                 return NotFound();
             }
-
+            if (ModelState.IsValid && movie.Title == "Independence Day")
+            {
+                return View("Confirmation", movie);
+            }
             if (ModelState.IsValid)
             {
                 try
