@@ -19,7 +19,7 @@ namespace Movies_Assignment9_DevynSmith_Section3.Controllers
         }
 
         // GET: Movies
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> ViewMovies()
         {
             return View(await _context.Movies.ToListAsync());
         }
@@ -42,18 +42,18 @@ namespace Movies_Assignment9_DevynSmith_Section3.Controllers
             return View(movie);
         }
 
-        // GET: Movies/Create
-        public IActionResult Create()
+        // GET: Movies/AddMovie
+        public IActionResult AddMovie()
         {
             return View();
         }
 
-        // POST: Movies/Create
+        // POST: Movies/AddMovie
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("MovieID,Category,Title,Year,Director,Rating,Edited,LentTo,Notes")] Movie movie)
+        public async Task<IActionResult> AddMovie([Bind("MovieID,Category,Title,Year,Director,Rating,Edited,LentTo,Notes")] Movie movie)
         {
             if (ModelState.IsValid && movie.Title == "Independence Day")
             {
@@ -117,7 +117,7 @@ namespace Movies_Assignment9_DevynSmith_Section3.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(ViewMovies));
             }
             return View(movie);
         }
@@ -148,7 +148,7 @@ namespace Movies_Assignment9_DevynSmith_Section3.Controllers
             var movie = await _context.Movies.FindAsync(id);
             _context.Movies.Remove(movie);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(ViewMovies));
         }
 
         private bool MovieExists(int id)
